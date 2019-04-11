@@ -37,4 +37,4 @@ for i in range(1, last_page + 1):
             r = requests.get(url, allow_redirects=True)
             filename = get_filename_from_cd(r.headers.get('content-disposition'))
             logger.info(f'downloading file {filename}...')
-            open(filename, 'wb').write(r.content)
+            open(f'data/{filename}', 'wb').write(r.content)
